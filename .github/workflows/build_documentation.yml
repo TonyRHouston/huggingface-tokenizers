@@ -1,13 +1,6 @@
 name: Build documentation
-
 on:
-  push:
-    branches:
-      - main
-      - doc-builder*
-      - v*-release
-      - use_templates
-
+  workflow_dispatch: {}
 jobs:
   build:
     uses: huggingface/doc-builder/.github/workflows/build_main_documentation.yml@main
