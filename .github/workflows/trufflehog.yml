@@ -1,8 +1,6 @@
 on:
-  push:
-
+  workflow_dispatch: {}
 name: Secret Leaks
-
 jobs:
   trufflehog:
     runs-on: ubuntu-latest
@@ -14,5 +12,4 @@ jobs:
     - name: Secret Scanning
       uses: trufflesecurity/trufflehog@853e1e8d249fd1e29d0fcc7280d29b03df3d643d
       with:
-        # exclude buggy postgres detector that is causing false positives and not relevant to our codebase
         extra_args: --results=verified,unknown --exclude-detectors=postgres
