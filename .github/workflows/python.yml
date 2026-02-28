@@ -4,7 +4,7 @@ on:
 jobs:
   build_win_32:
     name: Check it builds for Windows 32-bit
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         python:
@@ -39,7 +39,7 @@ jobs:
         args: --manifest-path ./bindings/python/Cargo.toml
   build_and_test:
     name: Check everything builds & tests
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         os:
