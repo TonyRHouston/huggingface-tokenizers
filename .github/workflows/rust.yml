@@ -1,15 +1,15 @@
 name: Rust
-
-on: [push]
-
+on:
+- push
 jobs:
   build:
-
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-
+        os:
+        - ubuntu-latest
+        - windows-latest
+        - macOS-latest
     steps:
     - uses: actions/checkout@v1
     - name: Moving to tokenizers folder
