@@ -5,7 +5,7 @@ permissions:
   contents: read
 jobs:
   linux:
-    runs-on: ${{ matrix.platform.runner }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         platform:
@@ -39,7 +39,7 @@ jobs:
         name: wheels-linux-${{ matrix.platform.target }}
         path: dist
   musllinux:
-    runs-on: ${{ matrix.platform.runner }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         platform:
@@ -69,7 +69,7 @@ jobs:
         name: wheels-musllinux-${{ matrix.platform.target }}
         path: dist
   windows:
-    runs-on: ${{ matrix.platform.runner }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         platform:
@@ -100,7 +100,7 @@ jobs:
         name: wheels-windows-${{ matrix.platform.target }}
         path: dist
   macos:
-    runs-on: ${{ matrix.platform.runner }}
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         platform:
